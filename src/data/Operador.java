@@ -23,18 +23,25 @@ public class Operador {
     
     /*verifica si se puede hacer el maximo comun divisor o no*/
     public boolean comprobarNumeros(){
+         if(num1 < 0 || num2 < 0){
+            System.out.println("Los numeros introducidos son negativos");
+            return false;
+            }
         if(num1 == num2){
             System.out.println("Los numeros introducidos son iguales");
             return false;
         }
         else{
-            if(sacarResultado()==1){
+            if(sacarResultado() == 1 || sacarResultado() < 0){
                 System.out.println("Los numeros introducidos no tienen MCD");
                 return false;
             }
         }
+       
+        
         return true;
     };
+    
 /*los uso ya que num1 y num2 son privados, para luego enseñarlos por el main*/
     public int getNum1() {
         return num1;
